@@ -7,63 +7,82 @@ const createRecipe = (name, description, youtube = []) => ({
 const FOOD_LIST = {
 	'Monday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
-			createRecipe('Sunny side-up egg', 'Eggs'),
-			createRecipe('Bacon', 'Bacon'),
+			createRecipe('Scrambled Eggs', 'Eggs'),
+			createRecipe('Ginisang Paliya', 'Paliya'),
 		],
 		'Lunch': [
+			createRecipe('Pork bas-uy', 'Pork'),
+		],
+		'Snacks': [
+			createRecipe('Kikiam', 'Kikiam'),
+			createRecipe('Fishballs', 'Fishballs'),
 		],
 		'Dinner': [
+			createRecipe('Pork Belly Sinugba', 'Sinugba'),
 		],
 	},
 	'Tuesday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
+			createRecipe('Tocino', 'Tocino'),
 			createRecipe('Sunny side-up egg', 'Eggs'),
 		],
 		'Lunch': [
-			createRecipe('Creamy Macaroni Soup', 'From Panlasang Pinoy', ['https://www.youtube-nocookie.com/embed/WVI2XrH8K90']),
+			createRecipe('Chicken Sotanghon', 'Chicken', ['https://www.youtube.com/watch?v=MSESrlCh1f0']),
+		],
+		'Snacks': [
+			createRecipe('Fries', 'Fries'),
 		],
 		'Dinner': [
+			createRecipe('Calamares', 'Squid'),
+			createRecipe('Virginia Sisig Frozen', 'Sisig'),
 		],
 	},
 	'Wednesday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
-			createRecipe('Bacon', 'Bacon'),
+			createRecipe('Tortang Talong', 'Talong'),
+			createRecipe('Longganisa', 'Longganisa'),
 		],
 		'Lunch': [
+			createRecipe('Ginisang Kalabasa', 'Kalabasa'),
+			createRecipe('Pork with Potato', 'Potato'),
+		],
+		'Snacks': [
+			createRecipe('Bihon Guisado', 'Bihon'),
 		],
 		'Dinner': [
+			createRecipe('Pork Humba', 'Pork'),
 		],
 	},
 	'Thursday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
-			createRecipe('Sunny side-up egg', 'Eggs'),
-			createRecipe('Bacon', 'Bacon'),
+			createRecipe('Sardine with egg', 'Sardine'),
+			createRecipe('Sweet Ham', 'Ham'),
 		],
 		'Lunch': [
+			createRecipe('Ginataang Manok with Sayote', 'Manok'),
 		],
 		'Dinner': [
+			createRecipe('Sprite pork adobo', 'Adobo'),
 		],
 	},
 	'Friday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
-			createRecipe('Sunny side-up egg', 'Eggs'),
-			createRecipe('Bacon', 'Bacon'),
+			createRecipe('Ginisang Ampalaya', 'Paliya'),
+			createRecipe('Buwad', 'Buwad'),
 		],
 		'Lunch': [
+			createRecipe('Mongos', 'Mongos'),
+			createRecipe('Pork Pinakupsan', 'Pinakupsan'),
+		],
+		'Snacks': [
+			createRecipe('Kikiam', 'Kikiam'),
 		],
 		'Dinner': [
+			createRecipe('Pork belly sinugba', 'Sinugba'),
 		],
 	},
 	'Saturday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
-			createRecipe('Sunny side-up egg', 'Eggs'),
-			createRecipe('Bacon', 'Bacon'),
 		],
 		'Lunch': [
 		],
@@ -72,9 +91,6 @@ const FOOD_LIST = {
 	},
 	'Sunday': {
 		'Breakfast': [
-			createRecipe('Spam', 'Spam'),
-			createRecipe('Sunny side-up egg', 'Eggs'),
-			createRecipe('Bacon', 'Bacon'),
 		],
 		'Lunch': [
 		],

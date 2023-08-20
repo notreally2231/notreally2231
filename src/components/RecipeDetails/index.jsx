@@ -8,7 +8,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const Group = ({ defaultExpanded, items, title }) => {
 	return (
 		<div>
-			<Accordion defaultExpanded={defaultExpanded}>
+			<AccordionWrapped defaultExpanded={defaultExpanded}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -16,24 +16,26 @@ const Group = ({ defaultExpanded, items, title }) => {
         >
 					<Typography fontFamily="Roboto, sans-serif" fontSize="1.5em">{title}</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-					{items.map((item) => (
-						<RecipeContainer>
-							<Typography sx={{ mb: 1 }} fontFamily="Roboto, sans-serif" fontSize="1.3em">{item.name}</Typography>
-							{item.youtube.map((link) => (
-								<iframe
-									width="100%"
-									height="300px"
-									src={link}
-									frameborder="0"
-									allow="autoplay; encrypted-media"
-									allowfullscreen
-								></iframe>
-							))}
-						</RecipeContainer>
-					))}
+        <AccordionDetails sx={{ p: 0 }}>
+					<RecipeList>
+						{items.map((item, index) => (
+							<RecipeContainer key={`${item.name}-${index}`}>
+								<Typography fontFamily="Roboto, sans-serif" fontSize="1.1em">{item.name}</Typography>
+								{item.youtube.map((link) => (
+									<iframe
+										width="95%"
+										height="300px"
+										src={link}
+										frameborder="0"
+										allow="autoplay; encrypted-media"
+										allowfullscreen
+									></iframe>
+								))}
+							</RecipeContainer>
+						))}
+					</RecipeList>
         </AccordionDetails>
-      </Accordion>
+      </AccordionWrapped>
 		</div>
 	)
 };
@@ -43,7 +45,7 @@ const RecipeDetails = ({ foods }) => {
 	return (
 		<Wrapper>
 			{groups.map((group, index) => (
-				<Group defaultExpanded={index === 0} title={group} items={foods[group]} />
+				<Group key={`${group.name}-${index}`} defaultExpanded={index === 0} title={group} items={foods[group]} />
 			))}
 		</Wrapper>
 	);
@@ -53,8 +55,17 @@ const Wrapper = styled.div`
 	margin: 10px 0;
 `;
 
-const RecipeContainer = styled.div`
-	display: block;
+const RecipeList = styled.ul`
+	list-style-type: disc;
+`;
+
+const AccordionWrapped = styled(Accordion)`
+ && {
+	border-radius: 0 !important;
+ }
+`;
+
+const RecipeContainer = styled.li`
 `;
 
 export default RecipeDetails;

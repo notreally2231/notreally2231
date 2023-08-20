@@ -23,8 +23,6 @@ const App = () => {
     return FOOD_LIST[day];
   }, [selectedDate]);
 
-  console.log(foods)
-
   return (
     <Wrapper>
       <Header>Luto ni Inday</Header>
@@ -38,8 +36,8 @@ const Wrapper = styled.div`
   display: block;
   width: 90%;
   margin: auto;
-  height: 100%;
   font-family: Roboto, sans-serif;
+  padding-bottom: 20px;
 `;
 
 const Header = styled.div`
